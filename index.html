@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="first">
+      <div class="leftSide">
+        <div class="content">
+          <div class="number">
+            <p>1</p>
+          </div>
+          <div class="text">
+            <p>Step 1</p>
+            <h3>Your Info</h3>
+          </div>
+        </div>
+        <div class="content">
+          <div class="number">
+            <p>2</p>
+          </div>
+          <div class="text">
+            <p>Step 2</p>
+            <h3>Select Plan</h3>
+          </div>
+        </div>
+        <div class="content">
+          <div class="number">
+            <p>3</p>
+          </div>
+          <div class="text">
+            <p>Step 3</p>
+            <h3>Add-ons</h3>
+          </div>
+        </div>
+        <div class="content">
+          <div class="number">
+            <p>4</p>
+          </div>
+          <div class="text">
+            <p>Step 4</p>
+            <h3>Summary</h3>
+          </div>
+        </div>
+      </div>
+      <form class="rightSide rightSide-1" id="form-1">
+        <div class="form">
+          <div class="heading">
+            <h2>Personal info</h2>
+            <p>Please Provide your name, email, address, and phone number.</p>
+          </div>
+          <div class="item1 items">
+            <div class="error-title">
+              <h4>Name</h4>
+              <p id="error1" class="error">This field is required</p>
+            </div>
+            <input type="text" name="" id="name" placeholder="e.g. Stephen King" class="form-input1">
+          </div>
+          <div class="item2 items">
+            <div class="error-title">
+              <h4>Email Address</h4>
+              <p id="error1" class="error">This field is required</p>
+            </div>
+            <input type="email" name="" id="email" placeholder="e.g. stephenking@lorem.com" class="form-input1">
+          </div>
+          <div class="item3 items">
+            <div class="error-title">
+              <h4>Phone Number</h4>
+              <p id="error1" class="error">This field is required</p>
+            </div>
+            <input type="text" name="" id="phone" placeholder="e.g. +1 234 567 890" class="form-input1">
+          </div>
+        </div>
+        <div class="next next1">
+          <button type="button" id="next-btn" onclick="goNext()">Next Step</button>
+        </div>
+      </form>
+      <form class="rightSide rightSide-2" id="form-2">
+        <div class="form">
+          <div class="heading">
+            <h2>Select Your Plan</h2>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+          <div class="all-cards">
+            <div class="card card1">
+              <div class="img">
+                <img src="assets/images/icon-arcade.svg" alt="">
+              </div>
+              <div class="card-title">
+                <h4>Arcade</h4>
+                <p class="price">$9/mo</p>
+                <h5 class="free-heading">2 Months Free</h5>
+              </div>
+            </div>
+            <div class="card card1">
+              <div class="img">
+                <img src="assets/images/icon-advanced.svg" alt="">
+              </div>
+              <div class="card-title">
+                <h4>Advanced</h4>
+                <p class="price">$12/mo</p>
+                <h5 class="free-heading">2 Months Free</h5>
+              </div>
+            </div>
+            <div class="card card1">
+              <div class="img">
+                <img src="assets/images/icon-pro.svg" alt="">
+              </div>
+              <div class="card-title">
+                <h4>Pro</h4>
+                <p class="price">$15/mo</p>
+                <h5 class="free-heading">2 Months Free</h5>
+              </div>
+            </div>
+          </div>
+          <div class="slider">
+            <h5 id="month">Monthly</h5>
+            <input type="checkbox" id="switch" onchange="toggleSwitch()" /><label for="switch"></label>
+            <h5 id="year">Yearly</h5>
+          </div>
+        </div>
+        <div class="next next2">
+          <button type="button" id="next-btn" onclick="previousStep('block', 'none', 'none', 'none')">Go Back</button>
+          <button type="button" id="next-btn" onclick="goNext2();previousStep2()">Next Step</button>
+        </div>
+      </form>
+      <form class="rightSide rightSide-2 rightSide-3" id="form-3">
+        <div class="form">
+          <div class="heading">
+            <h2>Pick add-ons</h2>
+            <p>Add-ons help enhance your gaming experience.</p>
+          </div>
+          <div class="all-cards">
+            <div class="card card2">
+              <div class="img">
+                <input type="checkbox" id="chk1" name="chkdemo" class="checkbox" disabled><label for="chk1"></label>
+                <div class="card-title">
+                  <h4 class="addon-name">Online Service</h4>
+                  <p>Access to multiplayer games</p>
+                  <!-- <h5 class="free-heading">2 Months Free</h5> -->
+                </div>
+              </div>
+              <div class="card-price">
+                <h5 class="addon-price"></h5>
+              </div>
+            </div>
+            <div class="card card2">
+              <div class="img">
+                <input type="checkbox" id="chk1" name="chkdemo" class="checkbox">
+                <label for="chk1"></label>
+                <div class="card-title">
+                  <h4 class="addon-name">Larger Storage</h4>
+                  <p>Extra 1TB of cloud save</p>
+                  <!-- <h5 class="free-heading">2 Months Free</h5> -->
+                </div>
+              </div>
+              <div class="card-price">
+                <h5 class="addon-price"></h5>
+              </div>
+            </div>
+            <div class="card card2">
+              <div class="img">
+                <input type="checkbox" id="chk3" name="chkdemo" class="checkbox"><label for="chk3"></label>
+                <div class="card-title">
+                  <h4 class="addon-name">Customizable profile</h4>
+                  <p>Custome theme on your profile</p>
+                  <!-- <h5 class="free-heading">2 Months Free</h5> -->
+                </div>
+              </div>
+              <div class="card-price">
+                <h5 class="addon-price "></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="next next3">
+          <button type="button" id="next-btn" onclick="previousStep('none', 'block', 'none', 'none')">Go Back</button>
+          <button type="button" id="next-btn" onclick="goNext3()">Next Step</button>
+        </div>
+      </form>
+      <form class="rightSide rightSide-2 rightSide-3 rightSide-4" id="form-4">
+        <div class="form">
+          <div class="heading">
+            <h2>Finishing up</h2>
+            <p>Double-check everything looks OK before confirming.</p>
+          </div>
+          <div class="addon-cards">
+            <div class="plan" id="finished-plan">
+              <div class="first-card">
+                <div class="plan-title">
+                  <h4 class="finishing-plan" id="final-plan-title"></h4>
+                  <button>Change</button>
+                </div>
+                <div class="plan-price">
+                  <h4 id="final-plan-price">$9/mo</h4>
+                </div>
+              </div>
+              <hr>
+              <!-- <div class="plan-service">
+                <h4>Online service</h4>
+                <h5>$1/mo</h5>
+              </div>
+              <div class="plan-service">
+                <h4>Larger storage</h4>
+                <h5>$2/mo</h5>
+              </div> -->
+            </div>
+            <div class="plan-total">
+              <h4>Total(per month)</h4>
+              <h3 id="final-total-price"></h3>
+            </div>
+          </div>
+          <div class="next next3 next4" id="final-next">
+            <button type="button" id="next-btn" onclick="previousStep('none', 'none', 'block', 'none')">Go Back</button>
+            <button type="button" id="confirm-btn" onclick="confirmFunction()">Confirm</button>
+          </div>
+      </form>
+    </div>
+    <form class="rightSide rightSide-2 rightSide-3 rightSide-4 rightSide-5" id="form-5">
+      <div class="form">
+        <div class="summary-cards">
+          <img src="assets/images/icon-thank-you.svg" alt="">
+          <h1>Thank You!</h1>
+          <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support,
+            please feel free to email us at
+            support@loremgaming.com.</p>
+        </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
