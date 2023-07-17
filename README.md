@@ -1,7 +1,4 @@
 Multi-step form
-
-![Design preview for the Multi-step form ](./design/desktop-preview.jpg)
-
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
@@ -31,7 +28,7 @@ Your users should be able to:
 
   Desktop:
   
-  ![Alt text](/design/desktop-preview.jpg.jpg?raw=true "Optional Title")
+  ![Alt text](/design/desktop-preview.jpg?raw=true "Optional Title")
   
   Mobile:
 
